@@ -1,0 +1,16 @@
+
+# Vorbeeld:
+# ---------
+# voornaam: Model
+# naam: Student
+# groep: 1NMCT0
+# email: model.student@student.howest.be
+# toggl: 1234567890abcdef1234567890abcdef
+# neophyte: true
+
+voornaam:
+naam:
+groep:
+email:
+toggl:
+neophyte: true
