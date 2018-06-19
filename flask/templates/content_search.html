@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import product %}
+{% block search %}
+    <form class="c-header__search" action="" method="POST">
+            <input class="c-search-bar" type="text" name="search" id="search">
+            <input type="submit" name="submit" id="submit" hidden>
+        </form>
+{% endblock %}
+{% block body %}
+    <div class="o-layout">
+        {% for item in data %}
+            {{ product(item, 'product') }}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block body %}
+    <form id="js-form" class="js-form" action="" method="POST">
+        <div class="o-layout o-layout--justify-space-between">
+            <a href="{% if back_url_id %}{{ url_for('edit_icon', back_url=icon_back_url, back_url_id=back_url_id) }}{% else %}{% if data %}{{ url_for('edit_icon', back_url=icon_back_url, back_url_id=data[0]) }}{% else %}{{ url_for('edit_icon', back_url=icon_back_url) }}{% endif %}{% endif %}" class="c-edit-product-icon">
+                <div class="c-edit-product-icon__icon" style="background-image: url('{% if img %}{{ url_for('static', filename=img[1]) }}{% elif data %}{{ url_for('static', filename=data[9]) }}{% endif %}')">
+                </div>
+            </a>
+            <div class="c-text-inputs-aside">
+                <div>
+                    <input placeholder=" " class="c-edit-product__input-text" type="text" name="name" id="name"
+                           value="{% if data %}{{ data[1] }}{% endif %}" required>
+                    <div class="c-input-text__title">
+                        <p>Name</p>
+                    </div>
+                </div>
+                <div>
+                    <input placeholder=" " class="c-edit-product__input-text" type="number" name="amount" id="amount"
+                           value="{% if data %}{{ data[2] }}{% endif %}" min="1" required>
+                    <div class="c-input-text__title">
+                        <p>Amount</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="o-layout o-layout--justify-space-between">
+            <div class="u-48-of-100">
+                <input placeholder=" " class="c-edit-product__input-text" type="date" name="date_added" id="date_added"
+                       value="{% if data %}{{ data[3] }}{% endif %}" required>
+                <div class="c-input-text__title">
+                    <p>Date added</p>
+                </div>
+            </div>
+            <div class="u-48-of-100">
+                <input placeholder=" " class="c-edit-product__input-text" type="number" name="expiration_date"
+                       id="expiration_date" value="{% if data %}{{ data[4] }}{% endif %}" min="1" required>
+                <div class="c-input-text__title">
+                    <p>Expiration time</p>
+                </div>
+                <p class="c-input-text__info">Days from today</p>
+            </div>
+        </div>
+        <div class="c-text-input--large">
+            <div class="c-input-text__title c-input-text__title--large">
+                <p>Extra comments</p>
+            </div>
+            <textarea placeholder=" " class="c-edit-product__input-text c-edit-product__input-text--large" type="text"
+                      name="comments" id="comments">{% if data %}{% if data[6] != None %}{{ data[6] }}{% endif %}{% endif %}</textarea>
+        </div>
+    </form>
+{% endblock %}

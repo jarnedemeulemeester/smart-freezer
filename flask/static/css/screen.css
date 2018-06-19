@@ -1,0 +1,1838 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Roboto", Helvetica, arial, sans-serif;
+    color: #242A33;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    height: 100%;
+}
+
+body.has-mobile-nav {
+    overflow: hidden;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #267FFE;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: #267FFE;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 200;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+    color: #3C3C42;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    color: #040D1A;
+    text-decoration: none;
+}
+
+a:visited,
+a:active {
+    color: #040D1A;
+}
+
+a:hover,
+a:focus {
+    color: #040D1A;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    overflow: auto;
+    position: relative;
+    padding: 16px 16px 0;
+}
+
+/* color modifiers */
+
+.o-row--neutral-x-light {
+    background-color: #F7F7FA;
+}
+
+.o-row--gradient-1 {
+    background: linear-gradient(to top right, #5051DB, #3887F7);
+    color: #fff;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding: 48px 24px 24px;
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-top: 48px;
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .o-row--lg {
+        padding-top: 72px;
+        padding-bottom: 48px;
+    }
+}
+
+/* padding clear modifiers */
+
+.o-row--clear-top {
+    padding-top: 0;
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 56.4em; /* 56.4 * 20px = 1128px */
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    position: relative;
+}
+
+.o-section + .o-section {
+    padding-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        padding-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        padding-top: 72px;
+    }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .o-layout__item {
+        width: 100%;
+    }
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 24px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+.o-layout--collum {
+    flex-direction: column;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
+
+.o-layout--grow {
+    flex-grow: 1;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Page
+    ---
+    Main page
+*/
+
+.c-page {
+    transform: translateX(0%);
+    transition: transform .5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+.has-mobile-nav .c-page {
+    transform: translateX(25%);
+}
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.c-logo__symbol {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .c-logo {
+        height: 40px;
+    }
+}
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(15,51,102,0.16);
+}
+
+.c-header__left {
+    display: flex;
+}
+
+.c-header__actions {
+    display: flex;
+}
+
+.c-header__search {
+    flex-grow: 1;
+    margin-left: 16px;
+}
+
+.c-search-bar {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: #E6E6E6;
+}
+
+.c-header__title {
+    font-size: 20px;
+    line-height: 30px;
+    margin: -3px 0 -3px 32px;
+}
+
+.c-header__nav {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .c-header__nav {
+        display: block;
+    }
+
+    .c-header__nav--main {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 12px;
+    }
+
+    .c-header__mobile-nav-trigger {
+        display: none;
+    }
+}
+
+.c-action-button {
+    margin-left: 24px;
+}
+
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
+
+.c-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c-footer__logo {
+    width: 100%;
+}
+
+.c-footer__nav {
+    width: 50%;
+}
+
+@media (min-width: 768px) {
+    .c-footer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .c-footer__logo {
+        display: flex;
+        justify-content: center;
+        padding: 0 12px;
+    }
+
+    .c-footer__nav {
+        width: auto;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-footer {
+        justify-content: space-between;
+    }
+
+    .c-footer__nav {
+        padding: 0;
+    }
+
+    .c-footer__logo + .c-footer__nav {
+        order: -1;
+    }
+
+    .c-footer__logo {
+        width: auto;
+    }
+
+    /*
+        Bonus: real centering with CSS
+        Checkout: https://css-tricks.com/centering-css-complete-guide/
+    */
+
+    /* .c-footer__logo {
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .c-footer__logo .c-logo {
+        margin-bottom: 0;
+    } */
+}
+
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.c-nav-button__svg {
+    fill: #242A33;
+    height: 100%;
+}
+
+.c-nav {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.c-nav--meta {
+    font-size: 16px;
+}
+
+.c-nav-item {
+    margin-bottom: 8px;
+}
+
+.c-nav-item--bottom {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 16px);
+}
+
+.c-nav-item__button {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.c-nav-item__button:hover {
+    background-color: #F2F2F2;
+}
+
+.c-nav-item__button--active {
+    background-color: #CBE0FE !important;
+    color: #267FFE;
+    fill: #267FFE;
+}
+
+.c-nav-item__text {
+    margin-bottom: 0;
+    margin-left: 32px;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    padding: 8px 0;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #202024;
+}
+
+.c-nav__link--meta,
+.c-nav__link--meta:visited,
+.c-nav__link--meta:active {
+    color: #6C6C75;
+}
+
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #5051db;
+}
+
+@media (min-width: 992px) {
+    .c-nav__list {
+        display: flex;
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+
+    .c-nav__link {
+        padding: 8px 16px;
+    }
+}
+
+/*
+    Component: mobile nav
+    ---
+    Dedicated mobile nav component
+*/
+
+.c-mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    pointer-events: none;
+}
+
+.has-mobile-nav .c-mobile-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.c-mobile-nav__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 8px 16px 8px;
+}
+
+.c-mobile-nav__header h1 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.c-mobile-nav__bg {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #202024;
+    transition: opacity .5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+.has-mobile-nav .c-mobile-nav__bg {
+    opacity: .5;
+}
+
+.c-mobile-nav__body {
+    position: fixed;
+    padding: 8px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 304px;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform .5s cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+.has-mobile-nav .c-mobile-nav__body {
+    transform: translateX(0%);
+}
+
+@media (min-width: 768px) {
+    .c-mobile-nav__body {
+        padding: 48px;
+    }
+}
+
+/*
+    Component: fab
+    ---
+    Floating action button
+*/
+
+.c-fab {
+    position: fixed;
+    right: 16px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+    background-color: #267FFE;
+    border-radius: 28px;
+    box-shadow: 0px 6px 6px rgba(15,51,102,0.24);
+    cursor: pointer;
+}
+
+.c-fab button {
+    width: 24px;
+    height: 24px;
+}
+
+/*
+    Component: item
+    ---
+    Product in list
+*/
+
+.c-item {
+    display: flex;
+    margin-bottom: 16px;
+    text-align: start;
+}
+
+.c-item__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 0 16px 0;
+    border: rgba(15,51,102,1) 1px solid;
+    border-radius: 4px;
+    background-size: cover;
+    background-position: center;
+}
+
+.c-item__name {
+    position: relative;
+    margin: 8px 0 8px 0;
+    left: -8px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.c-item__time-remaining {
+    position: relative;
+    left: -8px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #363F4D;
+    margin: 0;
+}
+
+.c-item__amount {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    top: 48px;
+    left: -16px;
+    background-color: #267FFE;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+}
+
+.c-item__amount p {
+    margin: 0;
+}
+
+.c-item-divider {
+    border-top: #E6E6E6 1px solid;
+    margin-bottom: 16px;
+    margin-left: 80px;
+    margin-right: -24px;
+}
+
+.c-edit-product-icon {
+    width: 120px;
+    height: 120px;
+    border: #000 2px solid;
+    border-radius: 4px;
+    margin-right: 16px;
+}
+
+.c-edit-product-icon__icon {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.c-text-inputs-aside {
+    flex-grow: 1;
+    width: 100px;
+    margin-top: 8px;
+}
+
+.c-edit-product__input-text {
+    border: #E6E6E6 1px solid;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    padding-left: 12px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #242A33;
+}
+
+.c-text-input--large {
+    margin-top: -24px;
+}
+
+.c-edit-product__input-text--large {
+    height: calc(100vh - 300px);
+    padding: 12px;
+}
+
+.c-edit-product__input-text:hover {
+    border: #CCCCCC 1px solid;
+}
+
+.c-edit-product__input-text:focus {
+    outline: none;
+    border: #267FFE 1px solid;
+}
+
+.c-edit-product__input-text:focus + .c-input-text__title {
+    top: -54px;
+    color: #267FFE;
+}
+
+.c-edit-product__input-text:not(:placeholder-shown) + .c-input-text__title {
+    top: -54px;
+}
+
+
+.c-input-text__title {
+    display: inline-block;
+    position: relative;
+    top: -32px;
+    left: 8px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #606D80;
+    background-color: #fff;
+    padding: 0 4px 0 4px;
+    transition: top 0.1s;
+    pointer-events: none;
+}
+
+.c-input-text__info {
+    position: relative;
+    margin: 0;
+    font-size: 10px;
+    line-height: 15px;
+    top: -20px;
+    left: 12px;
+    color: #606D80;
+}
+
+.c-input-text__title--large {
+    top: 10px;
+}
+
+.c-edit-product__input-text:focus + .c-input-text__title--large {
+    color: #267FFE;
+}
+
+@media (min-width: 768px) {
+    .c-input-text__title {
+        top: -38px;
+    }
+
+    .c-input-text__title--large {
+        top: 12px;
+    }
+
+    .c-edit-product__input-text:focus +.c-input-text__title {
+        top: -60px;
+    }
+
+    .c-edit-product__input-text:not(:placeholder-shown) + .c-input-text__title {
+        top: -60px;
+    }
+}
+
+.c-input-text__title p {
+    margin: 0;
+}
+
+/*
+    Component: product-details
+    ---
+    Details of a product
+*/
+
+.c-product-details {
+
+}
+
+.c-product-details__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.c-product-details__icon {
+    border: 2px #000 solid;
+    border-radius: 4px;
+    width: 160px;
+    height: 160px;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.c-product-details__amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    background-color: #267FFE;
+    border-radius: 32px;
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 600;
+}
+
+.c-product-details__amount p {
+    margin: 0;
+    color: #fff;
+}
+
+.c-product-details__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4C95FE;
+    border-radius: 20px;
+}
+
+.c-product-details__button button {
+    width: 24px;
+    height: 24px;
+}
+
+.c-product-details__button--margin {
+    margin-bottom: 56px;
+}
+
+.c-product-details__divider {
+    width: 100%;
+    border-bottom: #E6E6E6 1px solid;
+    margin-bottom: 16px;
+}
+
+.c-product-details__expiration {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.c-product-details__expiration p {
+    margin: 0;
+}
+
+.c-product-details__comments p {
+    margin-bottom: 8px;
+}
+
+.c-product-details__comments-field {
+    border: #363F4D 1px solid;
+    border-radius: 4px;
+    width: 100%;
+    height: calc(100vh - 352px);
+    padding: 8px;
+}
+
+.c-edit-icon {
+    width: 72px;
+    height: 72px;
+    border: #000 2px solid;
+    border-radius: 4px;
+    margin: 0 8px 8px 0;
+}
+
+.c-edit-icon__icon {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.c-divider {
+    border-bottom: #E6E6E6 1px solid;
+    margin: 0 -8px 8px -8px;
+}
+
+.c-divider--large {
+    border-bottom: #E6E6E6 1px solid;
+    margin: 0 -16px 16px -16px;
+}
+
+.c-label {
+    font-size: 12px;
+    line-height: 18px;
+    color: #606D80;
+}
+
+.c-add-product-container {
+    text-align: center;
+    height: calc(100vh - 88px);
+}
+
+.c-add-product__button {
+    padding: 16px 36px;
+    margin: 8px;
+    border: #000 1px solid;
+    border-radius: 4px;
+}
+
+.c-add-product__button p {
+    margin: 0;
+}
+
+.c-temperature {
+    height: calc(100vh - 144px);
+}
+
+.c-temperature__minus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: #0648CC 1px solid;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px rgba(6, 72, 204, 0.16);
+}
+
+.c-temperature__plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: #C70B24 1px solid;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px rgba(199, 11, 36, 0.16);
+}
+
+.c-temperature__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 152px;
+    height: 152px;
+    border: #3700B3 1px solid;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px rgba(55, 0, 179, 0.16);
+}
+
+.c-temperature__value p {
+    font-size: 56px;
+    margin: 0;
+}
+
+.c-temperature__current-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    border: #3700B3 1px solid;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px rgba(55, 0, 179, 0.16);
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.c-temperature__current-value p {
+    font-size: 20px;
+    margin: 0;
+}
+
+.c-setting {
+    margin-bottom: 24px;
+}
+
+.c-setting p {
+    margin: 0;
+}
+
+.c-setting__input {
+    width: 100px;
+    border: none;
+    text-align: end;
+}
+
+.c-barcode-scanner {
+    height: calc(100vh - 88px);
+}
+
+.c-barcode-scanner__text {
+    font-size: 24px;
+}
+
+.c-upload-form {
+    width: 24px;
+    height: 24px;
+}
+
+.c-upload-form__input {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.c-info {
+    text-align: center;
+}
+
+.c-info__logo {
+    width: 150px;
+    height: 150px;
+}
+
+.c-info__title {
+    font-size: 22px;
+    line-height: 33px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+.c-info__ip {
+    position: fixed;
+    bottom: 0;
+}
+
+/*
+    Component: Lead
+    ---
+    Lead type treatments to style everything that differs from standard typography elements
+*/
+
+.c-lead {
+    font-weight: 200;
+}
+
+.c-lead--lg {
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.c-lead--xl {
+    font-size: 26px;
+    line-height: 32px;
+}
+
+.c-lead--xxl {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.c-lead--xxxl {
+    font-size: 36px;
+    line-height: 48px;
+}
+
+@media (min-width: 768px) {
+    .c-lead--lg {
+        font-size: 23px;
+        line-height: 32px;
+    }
+
+    .c-lead--xl {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .c-lead--xxl {
+        font-size: 41px;
+        line-height: 48px;
+    }
+
+    .c-lead--xxxl {
+        font-size: 52px;
+        line-height: 64px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .c-lead--lg {
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .c-lead--xl {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+    .c-lead--xxl {
+        font-size: 52px;
+        line-height: 64px;
+    }
+
+    .c-lead--xxxl {
+        font-size: 66px;
+        line-height: 72px;
+    }
+}
+
+/*
+    Component: figure
+    ---
+    Special type of figure and figcaption
+*/
+
+.c-figure {
+    position: relative;
+}
+
+.c-figure__caption {
+    line-height: 15px;
+    margin-top: 8px;
+    padding-left: 6px;
+    padding-top: 1px;
+    border: 2px solid #5051DB;
+    border-width: 0 0 0 2px;
+}
+
+@media (min-width: 768px) {
+    .c-figure__caption--absolute {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 8px;
+        text-align: right;
+        background-color: #fff;
+        padding: 16px;
+        max-width: 260px;
+        border-width: 0 4px 0 0;
+    }
+}
+
+/*
+    Component: Title icon
+    ---
+    Special type of title with icon
+*/
+
+.c-title-icon {
+    display: flex;
+    align-items: flex-start;
+}
+
+.c-title-icon__icon {
+    height: 70px;
+    margin-right: 20px;
+}
+
+@media (min-width: 768px) {
+    .c-title-icon__icon {
+        height: 84px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .c-title-icon__icon {
+        height: 112px;
+    }
+}
+
+/*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 4px 0;
+    transition: color .175s ease-in;
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+    color: #7373F5;
+}
+
+.c-link-cta::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #7373F5;
+    transform: scaleX(.5);
+    transform-origin: left;
+    transition-property: transform, background-color;
+    transition-duration: .175s;
+    transition-timing-function: ease-in;
+}
+
+.c-link-cta:hover {
+    color: #3E3EA8;
+}
+
+.c-link-cta:hover::after {
+    transform: scaleX(1);
+    background-color: #3E3EA8;
+}
+
+/* inversed */
+
+.c-link-cta--inverse,
+.c-link-cta--inverse:visited,
+.c-link-cta--inverse:active,
+.c-link-cta--inverse:hover {
+    color: #fff;
+}
+
+.c-link-cta--inverse::after,
+.c-link-cta--inverse:hover::after {
+    background-color: #fff;
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-primary-light {
+    color: #7373F5;
+}
+
+.u-color-primary-base {
+    color: #5051DB;
+}
+
+.u-color-primary-dark {
+    color: #3E3EA8;
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 32px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 48px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 18em !important;
+}
+
+.u-max-width-sm {
+    max-width: 36em !important;
+}
+
+.u-max-width-md {
+    max-width: 42em !important;
+}
+
+.u-max-width-lg {
+    max-width: 60em !important;
+}
+
+.u-max-width-xl {
+    max-width: 75em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+/*
+    Utility: Widths
+    ---
+    Utility classes to put specific widths onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-width-auto {
+    width: auto !important;
+}
+
+.u-1-of-2 {
+    width: 50% !important;
+}
+
+.u-48-of-100 {
+    width: 48% !important;
+}
+
+.u-1-of-3 {
+    width: 33.3333333333% !important;
+}
+
+.u-2-of-3 {
+    width: 66.6666666667% !important;
+}
+
+.u-1-of-4 {
+    width: 25% !important;
+}
+
+.u-3-of-4 {
+    width: 75% !important;
+}
+
+.u-1-of-5 {
+    width: 20% !important;
+}
+
+.u-2-of-5 {
+    width: 40% !important;
+}
+
+.u-3-of-5 {
+    width: 60% !important;
+}
+
+.u-4-of-5 {
+    width: 80% !important;
+}
+
+.u-1-of-6 {
+    width: 16.6666666667% !important;
+}
+
+.u-5-of-6 {
+    width: 83.3333333333% !important;
+}
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        width: 50% !important;
+    }
+    .u-1-of-3-bp1 {
+        width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp1 {
+        width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp1 {
+        width: 25% !important;
+    }
+    .u-3-of-4-bp1 {
+        width: 75% !important;
+    }
+    .u-1-of-5-bp1 {
+        width: 20% !important;
+    }
+    .u-2-of-5-bp1 {
+        width: 40% !important;
+    }
+    .u-3-of-5-bp1 {
+        width: 60% !important;
+    }
+    .u-4-of-5-bp1 {
+        width: 80% !important;
+    }
+    .u-1-of-6-bp1 {
+        width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp1 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        width: 50% !important;
+    }
+    .u-1-of-3-bp2 {
+        width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp2 {
+        width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp2 {
+        width: 25% !important;
+    }
+    .u-3-of-4-bp2 {
+        width: 75% !important;
+    }
+    .u-1-of-5-bp2 {
+        width: 20% !important;
+    }
+    .u-2-of-5-bp2 {
+        width: 40% !important;
+    }
+    .u-3-of-5-bp2 {
+        width: 60% !important;
+    }
+    .u-4-of-5-bp2 {
+        width: 80% !important;
+    }
+    .u-1-of-6-bp2 {
+        width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp2 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        width: 50% !important;
+    }
+    .u-1-of-3-bp3 {
+        width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp3 {
+        width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp3 {
+        width: 25% !important;
+    }
+    .u-3-of-4-bp3 {
+        width: 75% !important;
+    }
+    .u-1-of-5-bp3 {
+        width: 20% !important;
+    }
+    .u-2-of-5-bp3 {
+        width: 40% !important;
+    }
+    .u-3-of-5-bp3 {
+        width: 60% !important;
+    }
+    .u-4-of-5-bp3 {
+        width: 80% !important;
+    }
+    .u-1-of-6-bp3 {
+        width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp3 {
+        width: 83.3333333333% !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        width: 50% !important;
+    }
+    .u-1-of-3-bp4 {
+        width: 33.3333333333% !important;
+    }
+    .u-2-of-3-bp4 {
+        width: 66.6666666667% !important;
+    }
+    .u-1-of-4-bp4 {
+        width: 25% !important;
+    }
+    .u-3-of-4-bp4 {
+        width: 75% !important;
+    }
+    .u-1-of-5-bp4 {
+        width: 20% !important;
+    }
+    .u-2-of-5-bp4 {
+        width: 40% !important;
+    }
+    .u-3-of-5-bp4 {
+        width: 60% !important;
+    }
+    .u-4-of-5-bp4 {
+        width: 80% !important;
+    }
+    .u-1-of-6-bp4 {
+        width: 16.6666666667% !important;
+    }
+    .u-5-of-6-bp4 {
+        width: 83.3333333333% !important;
+    }
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+   No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

@@ -1,0 +1,27 @@
+{% macro product(data, url, isTemplate) %}
+    <div class="o-layout__item u-1-of-3-bp2">
+        <a href="{{ url_for(url, id=data[0]) }}">
+            <div class="c-item">
+                <div class="c-item__icon" style="background-image: url('{{ url_for('static', filename=data[7]) }}')">
+                </div>
+                <div class="c-item__amount">
+                    <p>{% if isTemplate %}?{% else %}{{ data[2] }}{% endif %}</p>
+                </div>
+                <div>
+                    <h2 class="c-item__name">{{ data[1] }}</h2>
+                    <p class="c-item__time-remaining">{{ data[3] }} days</p>
+                </div>
+            </div>
+        </a>
+    </div>
+{% endmacro %}
+
+{% macro fab(add_url, aria_label) %}
+    <a class="c-fab" aria-label="{{ aria_label }}" href="{{ url_for(add_url) }}">
+        <div class="c-nav-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="#fff" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+            </svg>
+        </div>
+    </a>
+{% endmacro %}

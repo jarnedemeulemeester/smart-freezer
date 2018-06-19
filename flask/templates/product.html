@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="c-product-details__header">
+        <div class="c-product-details__icon" style="background-image: url('{{ url_for('static', filename=data[7]) }}')">
+        </div>
+        <div class="c-product-details__amount">
+            <p>{{ data[2] }}</p>
+        </div>
+        <div class="c-product-details__buttons">
+                <button class="o-button-reset c-product-details__button c-product-details__button--margin c-nav-button js-add-amount">
+                    <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                </button>
+                <button class="o-button-reset c-product-details__button c-nav-button js-minus-amount">
+                    <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <rect x="5" y="11" width="14" height="2"/>
+                    </svg>
+                </button>
+        </div>
+    </div>
+    <div class="c-product-details__divider"></div>
+    <div class="c-product-details__expiration">
+        <p>Expires in: </p>
+        <p>{{ data[3] }} days</p>
+    </div>
+    <div class="c-product-details__comments">
+        <p>Extra comments: </p>
+        <div class="c-product-details__comments-field">{% if data[4] != None %}{{ data[4] }}{% endif %}</div>
+    </div>
+{% endblock %}

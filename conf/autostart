@@ -1,0 +1,6 @@
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+@point-rpi
+@chromium-browser --incognito 127.0.0.1
+@florence -u "/home/pi/florence.conf"

@@ -1,0 +1,14 @@
+[Unit]
+Description=SmartFreezer sensor service
+After=network.target
+BindsTo=mysqld.service
+After=mysqld.service
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/smartfreezer/sensor
+ExecStart=/home/pi/smartfreezer/env/bin/python /home/pi/smartfreezer/sensor/sensor.py
+
+[Install]
+WantedBy=multi-user.target

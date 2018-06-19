@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import product %}
+{% block body %}
+        <div class="o-layout">
+    {% for item in data %}
+        {{ product(item, 'add_template_id') }}
+    {% endfor %}
+        </div>
+{% endblock %}

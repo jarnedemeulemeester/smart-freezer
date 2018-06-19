@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block body %}
+    <form id="js-form" class="js-form" action="" method="POST">
+        <div>
+            <p class="c-label">Temperature</p>
+            <div class="o-layout o-layout--justify-space-between c-setting">
+                <p>Minimum temperature</p>
+                <div class="o-layout">
+                    <input class="c-setting__input" type="number" name="min_temp" id="min_temp" value="{{ data[1] }}">
+                    <p>°C</p>
+                </div>
+            </div>
+            <div class="o-layout o-layout--justify-space-between c-setting">
+                <p>Maximum temperature</p>
+                <div class="o-layout">
+                    <input class="c-setting__input" type="number" name="max_temp" id="max_temp" value="{{ data[2] }}">
+                    <p>°C</p>
+                </div>
+            </div>
+        </div>
+        <div class="c-divider--large"></div>
+        <div>
+            <p class="c-label">Notifications</p>
+            <div class="o-layout o-layout--justify-space-between">
+                <p>Product almost expired</p>
+                <input type="checkbox" name="pae" id="pae" {% if data[4] == 1 %}checked{% endif %}>
+            </div>
+            <div class="o-layout o-layout--justify-space-between">
+                <p>Product expired</p>
+                <input type="checkbox" name="pe" id="pe" {% if data[5] == 1 %}checked{% endif %}>
+            </div>
+        </div>
+        <div class="c-divider--large"></div>
+        <div class="o-layout o-layout--justify-space-between">
+            <p>Add automatically to shopping list</p>
+            <input type="checkbox" name="shoppinglist" id="shoppinglist" {% if data[6] %}checked{% endif %}>
+        </div>
+    </form>
+{% endblock %}

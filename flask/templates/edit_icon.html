@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="o-layout o-layout--justify-center">
+    {% for item in data %}
+        <a href="{{ url_for(icon_back_url, id=back_url_id, imgid=item[0]) }}" class="c-edit-icon">
+            <div class="c-edit-icon__icon" style="background-image: url('{{ url_for('static', filename=item[1]) }}')">
+            </div>
+        </a>
+    {% endfor %}
+    </div>
+{% endblock %}
+{% block fab %}
+                <form class="c-upload-form js-upload-form" action="" method="post" enctype="multipart/form-data">
+                    <input class="c-upload-form__input" type="file" name="file" id="file" accept="image/png, image/jpeg" hidden>
+                    <label class="c-fab" for="file">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="#fff" d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
+                            />
+                        </svg>
+                    </label>
+                </form>
+{% endblock %}

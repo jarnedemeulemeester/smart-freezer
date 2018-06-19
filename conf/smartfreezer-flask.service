@@ -1,0 +1,14 @@
+[Unit]
+Description=uWSGI instance to serve smartfreezer web interface
+After=network.target
+BindsTo=mysqld.service
+After=mysqld.service
+
+[Service]
+User=pi
+Group=www-data
+WorkingDirectory=/home/pi/smartfreezer/flask
+ExecStart=/usr/bin/uwsgi --ini /home/pi/smartfreezer/conf/uwsgi-flask.ini
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="c-temperature o-layout o-layout--collum o-layout--justify-center">
+                <div class="c-temperature__current-value">
+                    <p>{{ current_temp }}°</p>
+                </div>
+                <div class="o-layout o-layout--justify-space-around o-layout--align-center">
+                    <button class="o-button-reset c-temperature__minus js-temp-minus">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <rect x="5" y="11" width="14" height="2" />
+                        </svg>
+                    </button>
+                    <div class="c-temperature__value">
+                        <p>{{ temp }}°</p>
+                    </div>
+                    <button class="o-button-reset c-temperature__plus js-temp-plus">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import product, fab %}
+{% block body %}
+    <div class="o-layout">
+        {% for item in data %}
+            {{ product(item, 'edit_template', True) }}
+        {% endfor %}
+    </div>
+{% endblock %}
+{% block fab %}
+    {{ fab('add_template', 'Add template') }}
+{% endblock %}
