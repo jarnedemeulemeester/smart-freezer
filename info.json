@@ -1,0 +1,69 @@
+{
+    "credentials": {
+        "application": [
+            {
+                "passwd": "w5zDnsOcw4o=",
+                "comment": "",
+                "user": "none"
+            }
+        ],
+        "system": {
+            "passwd": "w4DDm8Ofw5PDlcOMw6TCmsKiwpzCpMKewqY=",
+            "groups": [
+                [
+                    "pi",
+                    "adm",
+                    "dialout",
+                    "cdrom",
+                    "sudo",
+                    "audio",
+                    "video",
+                    "plugdev",
+                    "games",
+                    "users",
+                    "input",
+                    "netdev",
+                    "gpio",
+                    "i2c",
+                    "spi"
+                ]
+            ],
+            "user": "pi",
+            "status": null
+        }
+    },
+    "network": {
+        "wlan0": {
+            "mac": "b8-27-eb-b2-7e-97",
+            "ipv4": [
+                "172.30.248.144/21"
+            ],
+            "ipv6": [
+                "2001:06a8:2480:6ea4:99c6:13e8:dfce:b921/128",
+                "fe80:0000:0000:0000:5649:10d1:5ae3:11b0/64"
+            ]
+        },
+        "eth0": {
+            "mac": "b8-27-eb-e7-2b-c2",
+            "ipv4": [],
+            "ipv6": []
+        }
+    },
+    "python": {
+        "virtual_env": null,
+        "version": [
+            3,
+            5,
+            3,
+            "final",
+            0
+        ],
+        "interpreter": "/usr/bin/python3",
+        "status": false
+    },
+    "system": {
+        "boot_ip": [],
+        "host": "jarne_pi",
+        "status": true
+    }
+}
